@@ -1,4 +1,3 @@
-/*
 let user = {
     name: "Ronald"
 };
@@ -23,7 +22,6 @@ console.log(user);
 // Deletando uma propriedade
 delete user.name
 console.log(user);
-*/
 
 const user = {
     name: "Ronald",

@@ -2,7 +2,7 @@ const symbol1 = Symbol();
 const symbol2 = Symbol();
 
 // Symbols são únicos
-console.log("symbol1 é igual a symbol2? ", symbol1 == symbol2);
+console.log("symbol1 é igual a symbol2? ", symbol1 === symbol2);
 
 // Prevenir conflito entre nomes de propriedades
 const nameSymbol1 = Symbol("name");

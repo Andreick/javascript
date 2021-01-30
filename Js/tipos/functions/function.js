@@ -24,7 +24,7 @@ logValue("Value here");
 logFnResult(fn);
 
 // Receber e retornar funções
-const controlFnExec => fnParam => allowed => {
+const controlFnExec = fnParam => allowed => {
 
     if (allowed)
     {
