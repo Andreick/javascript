@@ -15,7 +15,7 @@ console.log(it.next());
 console.log(it.next());
 console.log(it.next());
 
-// Utilizando um iterador para percorer objetos iteráveis
+// Utilizar um iterador para percorer objetos iteráveis
 
 while (true)
 {
@@ -43,7 +43,8 @@ console.log(arr2);
 
 const obj = {
     values: [1, 2, 3, 4],
-    [Symbol.iterator]() {
+    [Symbol.iterator]()
+    {
         let i = 0;
 
         return {
@@ -66,3 +67,58 @@ for (let value of obj)
 
 const arr2 = [...obj];
 console.log(arr2);
+
+// Generators
+
+function* hello()
+{
+    console.log("Hello");
+    yield;
+
+    console.log("From");
+    const value = yield 1;
+
+    console.log(value);
+}
+
+const it = hello();
+
+console.log(it);
+console.log(it.next());
+console.log(it.next());
+console.log(it.next("Outside!"));
+
+function* naturalNumbers()
+{
+    let number = 0;
+    
+    while (true)
+    {
+        yield number;
+        number++;
+    }
+}
+
+const it = naturalNumbers();
+
+console.log(it.next());
+console.log(it.next());
+console.log(it.next());
+
+// Gerar iterador para objetos
+
+const obj = {
+    values: [1, 2, 3, 4],
+    *[Symbol.iterator]()
+    {
+        for (var i = 0; i < this.values.length; i++)
+        {
+            yield this.values[i];
+        }
+    }
+};
+
+for (let value of obj)
+{
+    console.log(value);
+}
